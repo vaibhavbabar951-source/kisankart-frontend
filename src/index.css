@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+/* ===== KisanKart theme: change colors here and the whole site updates ===== */
+@theme {
+  --color-bg: #0f0f10;
+  --color-surface: #1a1a1c;
+  --color-surface2: #262629;
+  --color-line: #36363b;
+  --color-accent: #ff6b00;
+  --color-accent2: #ff8a2b;
+  --color-muted: #9b9ba3;
+}
+
+html, body, #root { min-height: 100%; }
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: #f3f3f4;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+a { color: inherit; text-decoration: none; }
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .4rem;
+  padding: .5rem 1rem; border-radius: .5rem; border: 1px solid transparent;
+  font-size: .875rem; font-weight: 600; cursor: pointer; transition: all .15s;
+  white-space: nowrap;
+}
+.btn:disabled { opacity: .5; cursor: not-allowed; }
+.btn-primary { background: var(--color-accent); color: #fff; }
+.btn-primary:hover:not(:disabled) { background: var(--color-accent2); }
+.btn-outline { background: transparent; border-color: var(--color-line); color: #f3f3f4; }
+.btn-outline:hover:not(:disabled) { border-color: var(--color-accent); color: var(--color-accent); }
+.btn-danger { background: transparent; border-color: #7f1d1d; color: #f87171; }
+.btn-danger:hover:not(:disabled) { background: #7f1d1d; color: #fff; }
+.btn-sm { padding: .3rem .7rem; font-size: .8rem; }
+
+.input {
+  width: 100%; background: var(--color-surface2); border: 1px solid var(--color-line);
+  border-radius: .5rem; padding: .55rem .75rem; font-size: .9rem; color: #f3f3f4; outline: none;
+}
+.input:focus { border-color: var(--color-accent); }
+.input::placeholder { color: #6b6b73; }
+.label { display: block; font-size: .78rem; color: var(--color-muted); margin-bottom: .25rem; }
+.card { background: var(--color-surface); border: 1px solid var(--color-line); border-radius: .75rem; }
+.chip {
+  padding: .4rem .9rem; border-radius: 999px; font-size: .85rem; white-space: nowrap;
+  background: var(--color-surface2); border: 1px solid var(--color-line); cursor: pointer;
+}
+.chip:hover { border-color: var(--color-accent); }
+.chip-active { background: var(--color-accent); border-color: var(--color-accent); color: #fff; }
+.table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+.table th { text-align: left; color: var(--color-muted); font-weight: 600; padding: .6rem .75rem; border-bottom: 1px solid var(--color-line); }
+.table td { padding: .6rem .75rem; border-bottom: 1px solid var(--color-line); vertical-align: middle; }
